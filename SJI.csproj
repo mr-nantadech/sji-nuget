@@ -1,9 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<PackageId>SJI</PackageId>
+		<Title>SJI</Title>
+		<Version>2.0.1</Version>
+		<Authors>SJI Team Dev</Authors>
+		<Description>for my sji</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/mr-nantadech/sji-nuget</RepositoryUrl>
+		<PackageIcon>img.png</PackageIcon>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+  </ItemGroup>
+
+
+
+	<ItemGroup>
+		<None Include="Images\img.png" Pack="true" PackagePath="" />
+	</ItemGroup>
 
 </Project>
