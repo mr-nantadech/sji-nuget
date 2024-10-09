@@ -4,7 +4,7 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<PackageId>SJI</PackageId>
 		<Title>SJI</Title>
-		<Version>8.0.1</Version>
+		<Version>9.0.0</Version>
 		<Authors>SJI Team Dev</Authors>
 		<Description>MY SJI</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>

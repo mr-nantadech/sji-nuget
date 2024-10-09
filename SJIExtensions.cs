@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 
@@ -135,7 +136,8 @@ namespace SJI.Extensions
             {
                 if (obj is ExpandoObject)
                     return ((IDictionary<string, object>)obj).ContainsKey(propertyName);
-                return obj.GetType().GetProperty(propertyName) != null;
+                var type = obj?.GetType();
+                return type != null && string.IsNullOrEmpty(type.GetProperty(propertyName)?.Name);
             }
         }
 
@@ -148,14 +150,14 @@ namespace SJI.Extensions
                 _profiles = profiles;
             }
 
-            public IEnumerable<dynamic> Profiles()
+            public string Profiles()
             {
-                return _profiles;
+                return JsonConvert.SerializeObject(_profiles);
             }
 
-            public IEnumerable<dynamic> BasicProfiles()
+            public string BasicProfiles()
             {
-                return _profiles.Select(profile => new
+                var jsonreturn = _profiles.Select(profile => new
                 {
                     id = profile.id,
                     full_name_en = profile.full_name_en,
@@ -168,11 +170,14 @@ namespace SJI.Extensions
                     nickname = profile.nickname,
                     job_brand = profile.job_brand
                 });
+
+                // Serialize to JSON string and return
+                return JsonConvert.SerializeObject(jsonreturn);
             }
 
-            public IEnumerable<string> EmailIn()
+            public string EmailIn()
             {
-                return _profiles.Select(emp => emp.email_in).Cast<string>();
+                return JsonConvert.SerializeObject(_profiles.Select(emp => emp.email_in).Cast<string>());
             }
         }
     }
