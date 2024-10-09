@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>SJI</id>
+    <version>3.0.0</version>
+    <authors>SJI Dev Team</authors>
+    <owners>DEV_SJI</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/mr-nantadech/sji-nuget</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SJI Approver Library for .NET Core</description>
+    <releaseNotes>Initial release of the SJI Approver Library.</releaseNotes>
+    <copyright>Copyright 2024</copyright>
+    <tags>SJI Approver HR</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="13.0.1" />
+    </dependencies>
+  </metadata>
+</package>
